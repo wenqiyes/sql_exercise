@@ -80,3 +80,122 @@ watermelons that cost more than $5.00.
 
 
 SELECT common_name,price FROM melons WHERE melon_type = 'Watermelon' AND price > 5.00;
+
+
+==========
+7
+
+-----
+
+Write a query that displays all common names of melons that start with
+the letter 'C'.
+
+
+-----
+
+
+SELECT common_name FROM melons WHERE common_name LIKE 'C%';
+
+
+==========
+8
+
+-----
+
+Write a query that shows the common name of any melon with 'Golden'
+anywhere in the common name.
+
+
+-----
+
+
+SELECT common_name FROM melons WHERE common_name LIKE '%Golden%';
+
+
+==========
+9
+
+-----
+
+Write a query that shows all the distinct regions that a salesperson can belong to.
+
+
+-----
+
+
+SELECT region FROM salespeople GROUP BY region;
+
+
+==========
+10
+
+-----
+
+Write a query that shows the emails of all salespeople from both the
+Northwest and Southwest regions.
+
+
+-----
+
+
+SELECT email FROM salespeople WHERE region = 'Northwest' OR region = 'Southwest';
+
+
+==========
+11
+
+-----
+
+Write a query that shows the emails of all salespeople from both the
+Northwest and Southwest regions, this time using an 'IN' clause.
+
+
+-----
+
+
+SELECT email FROM salespeople WHERE region IN ('Northwest' , 'Southwest');
+
+
+==========
+12
+
+-----
+
+Write a query that shows the email, first name, and last name of all
+salespeople in either the Northwest or Southwest regions whose last names start
+with the letter 'M'.
+
+-----
+
+
+SELECT email, first_name, last_name FROM salespeople WHERE last_name LIKE 'M%' AND region  IN ('Northwest' , 'Southwest');
+
+
+==========
+13
+
+-----
+
+Write a query that shows the melon type, common name, price, and the
+price of the melon given in euros. The 'melons' table has prices in dollars,
+and the dollar to euro conversion rate is 0.73.
+
+
+-----
+
+
+SELECT melon_type, common_name, price, price * 0.73 AS price_in_euro FROM melons;
+
+
+==========
+14
+
+-----
+
+Write a query that shows the total number of customers in our customer
+table.
+
+-----
+
+
+SELECT COUNT(*) FROM customers;
